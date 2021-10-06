@@ -1,10 +1,10 @@
 import React from 'react'
 import "../styles/navbar.scss"
 
-export default function DashboardNavbar() {
+export default function DashboardNavbar({ setSidebarActive }) {
     return (
         <div className="dashboard-navbar-container">
-            <i className="far fa-bars mobile-navbar-toggle"></i>
+            <i className="far fa-bars mobile-navbar-toggle" onClick={() => setSidebarActive(true)}></i>
             <div className="input-container">
                 <i className="fal fa-search" />
                 <input placeholder="Search" />

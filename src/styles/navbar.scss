@@ -10,14 +10,13 @@
 	right: 0;
 	top: 0;
 	border: 1px solid var(--border-color);
+	z-index: 4;
 
 	.mobile-navbar-toggle {
 		display: none;
 		font-size: 1.5rem;
 		margin-top: 0.3rem;
 		cursor: pointer;
-		position: absolute;
-		left: 0;
 	}
 
 	.input-container {
@@ -70,13 +69,13 @@
 		width: 100vw !important;
 
 		.mobile-navbar-toggle {
-			display: unset !important;
-			margin-left: 1rem;
+			display: block !important;
+			margin-left: .5rem !important;  
 		}
 
 		.input-container {
 			width: 70%;
-			margin-left: 3rem;
+			margin-left: 1rem;
 		}
 		.right-side {
 			i {

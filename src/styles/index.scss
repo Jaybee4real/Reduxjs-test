@@ -10,9 +10,125 @@
 :root {
 	--color-primary: #fbb30b;
 	--grey: #514c5d85;
-    --border-color: #ECECEC;
+	--border-color: #ececec;
+	--text-color: #2c263d;
+	--btn-dark: #2f417e;
+}
+
+.button {
+	background-color: var(--btn-dark);
+	border: none;
+	border-radius: 15px;
+	color: #fff;
+	padding: 17px;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	i {
+		margin-left: 2rem;
+	}
 }
 
 body {
 	background-color: #fbfbff;
+}
+
+// Dashboard Content Styles
+
+.dashboard-container {
+	position: relative;
+}
+
+.dashboard-content-container {
+	position: relative;
+	width: calc(100vw - 300px);
+	min-height: 100%;
+	position: relative;
+	padding-top: 8rem;
+	margin-left: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.heading-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 2.5rem;
+
+		.heading-text {
+			font-size: 2.5rem;
+			font-weight: 700;
+			color: var(--text-color);
+		}
+	}
+
+	.table-toggle-container {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		margin-top: 2rem;
+		border-bottom: 1px solid var(--border-color);
+		padding: 0.5rem 2.5rem;
+		justify-content: space-between;
+		overflow-x: scroll;
+
+		.table-toggle-button {
+			font-weight: 600;
+			font-size: 1.1rem;
+			min-width: 200px;
+			width: 30%;
+			color: var(--text-color);
+			transition: all 0.4s ease;
+			position: relative;
+			margin-bottom: 0.5rem;
+
+			&.active::before {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: calc(-1rem + -2px);
+				left: -0.5rem;
+				background-color: var(--color-primary);
+				width: 100%;
+				height: 4px;
+				border-radius: 2px;
+			}
+
+			&::after {
+				content: attr(data-number);
+				position: relative;
+				background-color: #fbb30b27;
+				padding: 0.1rem 1rem;
+				border-radius: 5px;
+				width: 3rem;
+				height: 2rem;
+				margin-left: 0.5rem;
+				color: var(--color-primary);
+			}
+
+			&.active {
+				color: var(--text-color);
+
+				&::after {
+					background-color: var(--color-primary);
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 860px) {
+	.dashboard-content-container {
+		width: 100vw !important;
+		margin-left: 0 !important;
+	}
 }
