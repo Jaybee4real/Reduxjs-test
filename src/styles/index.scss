@@ -116,12 +116,130 @@ body {
 
 			&.active {
 				color: var(--text-color);
-
 				&::after {
 					background-color: var(--color-primary);
 					color: white;
 				}
 			}
+		}
+	}
+}
+
+.filter-buttons-container {
+	display: flex;
+	flex-direction: row;
+	min-width: 100%;
+	overflow-x: scroll;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0.5rem 0;
+	padding-left: 1rem;
+	margin-top: 2rem;
+
+	.filter-button {
+		padding: 0.8rem 1rem;
+		border-radius: 10px;
+		margin: 0.5rem 1rem;
+		min-width: 10rem;
+		border: 1px solid var(--border-color);
+		font-weight: 600;
+		color: lightgray;
+		max-width: fit-content;
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+		white-space: nowrap;
+
+		i {
+			font-size: 1rem;
+			margin: 0rem 1rem;
+		}
+
+		&.active,
+		&:hover {
+			border-color: 2px solid var(--color-primary);
+			color: var(--color-primary);
+		}
+	}
+}
+
+.table-container {
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	width: 95%;
+	margin-left: 2.5%;
+	overflow: scroll;
+
+	.table-heading-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		min-width: fit-content;
+
+		.table-heading {
+			width: 20%;
+			min-width: 15rem;
+			font-size: 1rem;
+			font-weight: 600;
+			color: var(--text-color);
+			padding: 0.5rem 1rem;
+			height: 3rem;
+			display: flex;
+			align-items: center;
+
+			&:first-of-type {
+				margin-left: 6rem;
+			}
+		}
+		.btn-spacing {
+			width: 10%;
+			min-width: 10rem;
+			height: 3rem;
+		}
+	}
+
+	.table-row {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		min-width: fit-content;
+		min-height: 3rem;
+		background-color: white;
+		margin: 0.5rem 0;
+		padding: 0.5rem 0;
+
+		.table-checkbox {
+			width: 6rem;
+			border-color: #e4e4e4;
+			border-radius: 5px;
+			align-self: center;
+			justify-self: center;
+			height: 2rem;
+		}
+
+		.table-cell {
+			width: 20%;
+			min-width: 15rem;
+			font-size: 0.9rem;
+			font-weight: 600;
+			color: #49484d;
+			padding: 0.5rem 1rem;
+			height: 3rem;
+			display: flex;
+			align-items: center;
+		}
+		.table-action-btn {
+			width: 10%;
+			min-width: 10rem;
+			height: 3rem;
+			background-color: #fbb30b27;
+			border-radius: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--color-primary);
+			font-weight: 600;
+			font-size: 0.9rem;
+			padding: 0.5rem 1rem;
 		}
 	}
 }
